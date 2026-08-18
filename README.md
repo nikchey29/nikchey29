@@ -12,9 +12,13 @@ Educational end-to-end ML prototype combining structured-data analysis, classifi
 
 An undergraduate digital-design research project exploring synchronous sequential logic, propagation delay and parallel counter architecture in the context of ICC-ROBINS 2025.
 ## 🛠 Current Technical Stack
-**Languages:** Python, SQL //
-**Data Science & ML:** Pandas, NumPy, scikit-learn, PyTorch //
-**Areas:** Machine Learning, Data Analysis, Time-Series Forecasting, Statistical Modelling //
-**Development:** Git, GitHub, Flask 
+
+**Languages:** Python, SQL
+
+**Data Science & ML:** Pandas, NumPy, scikit-learn, PyTorch
+
+**Areas:** Machine Learning, Data Analysis, Time-Series Forecasting, Statistical Modelling
+
+**Development:** Git, GitHub, Flask
 ## 📍 Currently 
 Based in Berlin, Germany and completing my MSc while building industry-oriented Data & AI systems.
