@@ -9,7 +9,7 @@ My recent work focuses on moving beyond notebook-only ML: reproducible data pipe
 
 ## Portfolio Snapshot
 
-- **[REES46 V2](https://github.com/nikchey29/rees46-v2)** — production-scale recommendation platform over **411.7M behavioral events** and **15.6M users**; the final held-out ranker improved **MRR@20 by 45.6%** over popularity. `DuckDB` `TensorFlow` `MLflow` `FastAPI` `PostgreSQL` `Docker`
+- **[REES46 V2](https://github.com/nikchey29/rees46-v2)** — Large-scale recommendation engineering system over **411.7M behavioral events** and **15.6M users**; the final held-out ranker improved **MRR@20 by 45.6%** over popularity. `DuckDB` `TensorFlow` `MLflow` `FastAPI` `PostgreSQL` `Docker`
 - **[FulfillAI](https://github.com/nikchey29/fulfillai)** — end-to-end e-commerce data and ML platform with **50K orders**, **10 PostgreSQL tables**, dbt analytics, forecasting, operational-risk models, PySpark streaming, MLflow and FastAPI; demand WAPE improved **88.24% → 69.59% (21.14% relative)**.
 - **[OTTO Demand Forecasting](https://github.com/nikchey29/otto-demand-forecasting-dissertation)** — compared **8 forecasting approaches** using chronological rolling-origin evaluation over **672 hourly observations**; selected model achieved **13.93% mean CV WAPE**, with final holdout WAPE of **9.80% for carts** and **11.34% for orders**.
 
