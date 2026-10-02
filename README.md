@@ -1,16 +1,16 @@
 # Hi, I'm Chaithanya Vemuri 👋
 
-### Data Science • Machine Learning • ML Engineering • Recommender Systems
+### Data Science • ML Engineering • Cloud / DevOps • Platform Engineering
 
-Currently completing an M.Sc. in Data Science, AI & Digital Business, building end-to-end machine-learning systems around large-scale behavioral data, forecasting, recommendation, ranking, and production-oriented analytics.
+Currently completing an M.Sc. in Data Science, AI & Digital Business, building end-to-end data, ML, and cloud-native systems around forecasting, recommendation, streaming, APIs, and platform engineering.
 
-My recent work focuses on moving beyond notebook-only ML: reproducible data pipelines, leakage-safe evaluation, experiment tracking, scalable feature engineering, model serving, testing, and deployment-oriented engineering.
+My recent work focuses on moving beyond notebook-only ML into reproducible data pipelines, model serving, CI/CD, containerization, Infrastructure as Code, Kubernetes/GKE, GitOps, observability, and reliability engineering.
 
 
 ## Portfolio Snapshot
 
 - **[REES46 V2](https://github.com/nikchey29/rees46-v2)** — Large-scale recommendation engineering system over **411.7M behavioral events** and **15.6M users**; the final held-out ranker improved **MRR@20 by 45.6%** over popularity. `DuckDB` `TensorFlow` `MLflow` `FastAPI` `PostgreSQL` `Docker`
-- **[FulfillAI](https://github.com/nikchey29/fulfillai)** — end-to-end e-commerce data and ML platform with **50K orders**, **10 PostgreSQL tables**, dbt analytics, forecasting, operational-risk models, PySpark streaming, MLflow and FastAPI; demand WAPE improved **88.24% → 69.59% (21.14% relative)**.
+- **[FulfillAI](https://github.com/nikchey29/fulfillai)** — end-to-end e-commerce data/ML platform with **50K orders**, dbt, forecasting, risk models, PySpark streaming, MLflow and FastAPI, extended through a verified **Terraform → GCP/GKE → Kubernetes/Helm → ArgoCD → Prometheus/Grafana** CloudOps path plus Jenkins, Ansible, ELK and OpenShift exercises; demand WAPE improved **88.24% → 69.59% (21.14% relative)**.
 - **[OTTO Demand Forecasting](https://github.com/nikchey29/otto-demand-forecasting-dissertation)** — compared **8 forecasting approaches** using chronological rolling-origin evaluation over **672 hourly observations**; selected model achieved **13.93% mean CV WAPE**, with final holdout WAPE of **9.80% for carts** and **11.34% for orders**.
 
 
@@ -101,9 +101,21 @@ Developed models for:
 
 The project emphasizes realistic temporal evaluation and avoiding future-data leakage rather than reporting inflated random-split metrics.
 
+**CloudOps / platform extension**
+
+- Terraform-provisioned GCP networking, Artifact Registry and GKE Autopilot
+- Docker image deployment through Kubernetes + Helm
+- ArgoCD GitOps sync and observed self-healing
+- Prometheus/Grafana observability setup
+- Jenkins CI pipeline execution
+- Ansible Linux configuration with idempotency proof
+- ELK structured-log ingestion exercise
+- OpenShift native build, deployment, TLS Route and live health verification
+- Deliberate bad-release diagnosis and rollback
+
 **Stack**
 
-`Python` `PostgreSQL` `SQL` `Pandas` `NumPy` `scikit-learn` `Parquet` `Machine Learning` `Feature Engineering`
+`Python` `PostgreSQL` `SQL` `dbt` `PySpark` `FastAPI` `MLflow` `Docker` `GitHub Actions` `Terraform` `GCP` `GKE` `Kubernetes` `Helm` `ArgoCD` `Prometheus` `Grafana` `Jenkins` `Ansible` `ELK` `OpenShift`
 
 ---
 
@@ -170,11 +182,15 @@ I am particularly interested in problems involving:
 
 **Engineering**
 
-`Docker` `Git` `GitHub Actions` `pytest` `mypy` `Ruff`
+`Docker` `Git` `GitHub Actions` `Jenkins` `Terraform` `Kubernetes` `Helm` `ArgoCD` `Ansible` `pytest` `mypy` `Ruff`
+
+**Cloud & Observability**
+
+`GCP` `GKE` `Prometheus` `Grafana` `ELK` `OpenShift`
 
 **Core areas**
 
-`Recommendation Systems` `Ranking` `Retrieval` `Forecasting` `Feature Engineering` `Experimentation` `Data Pipelines`
+`ML Engineering` `Cloud / DevOps` `Platform Engineering` `Recommendation Systems` `Forecasting` `Data Pipelines` `GitOps` `Observability` `Reliability Engineering`
 
 ---
 
@@ -226,9 +242,9 @@ I prioritize:
 
 I am currently targeting opportunities in:
 
-**Data Science • Machine Learning • ML Engineering • Applied AI • Analytics**
+**ML Engineering • Cloud / DevOps • Platform Engineering • Data Engineering • Data Science**
 
-Open to both **full-time roles and internships** where I can work on real data, modeling, experimentation, recommendation, forecasting, or production ML systems.
+Open to **full-time roles and internships** involving data/ML systems, cloud-native platforms, CI/CD, Kubernetes, observability, reliability, streaming, model serving, recommendation, or forecasting.
 
 ---
 
