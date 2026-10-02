@@ -250,5 +250,6 @@ Open to **full-time roles and internships** involving data/ML systems, cloud-nat
 
 ## Connect
 
+- [Portfolio](https://chaithanyavemuri.netlify.app/)
 - [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
 - [GitHub](https://github.com/nikchey29)
