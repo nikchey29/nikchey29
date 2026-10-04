@@ -1,255 +1,50 @@
-# Hi, I'm Chaithanya Vemuri 👋
+# Hi, I'm Chaithanya Vemuri
 
-### Data Science • ML Engineering • Cloud / DevOps • Platform Engineering
+**Data Science & ML Engineering, with growing hands-on Cloud/DevOps, Platform Engineering and MLOps experience.**
 
-Currently completing an M.Sc. in Data Science, AI & Digital Business, building end-to-end data, ML, and cloud-native systems around forecasting, recommendation, streaming, APIs, and platform engineering.
+I'm completing an MSc in Data Science, AI & Digital Business at Gisma University of Applied Sciences, with a BTech in Electronics & Communication Engineering. Based in Berlin, I build independent projects that connect data quality and defensible model evaluation to APIs, delivery automation, observability and recovery.
 
-My recent work focuses on moving beyond notebook-only ML into reproducible data pipelines, model serving, CI/CD, containerization, Infrastructure as Code, Kubernetes/GKE, GitOps, observability, and reliability engineering.
+[Portfolio](https://chaithanyavemuri.netlify.app/) · [General resume](https://chaithanyavemuri.netlify.app/assets/Chaithanya_Vemuri_Resume.pdf) · [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
 
+## Selected work
 
-## Portfolio Snapshot
+### [FulfillAI - Data, ML & CloudOps Platform](https://github.com/nikchey29/fulfillai)
 
-- **[REES46 V2](https://github.com/nikchey29/rees46-v2)** — Large-scale recommendation engineering system over **411.7M behavioral events** and **15.6M users**; the final held-out ranker improved **MRR@20 by 45.6%** over popularity. `DuckDB` `TensorFlow` `MLflow` `FastAPI` `PostgreSQL` `Docker`
-- **[FulfillAI](https://github.com/nikchey29/fulfillai)** — end-to-end e-commerce data/ML platform with **50K orders**, dbt, forecasting, risk models, PySpark streaming, MLflow and FastAPI, extended through a verified **Terraform → GCP/GKE → Kubernetes/Helm → ArgoCD → Prometheus/Grafana** CloudOps path plus Jenkins, Ansible, ELK and OpenShift exercises; demand WAPE improved **88.24% → 69.59% (21.14% relative)**.
-- **[OTTO Demand Forecasting](https://github.com/nikchey29/otto-demand-forecasting-dissertation)** — compared **8 forecasting approaches** using chronological rolling-origin evaluation over **672 hourly observations**; selected model achieved **13.93% mean CV WAPE**, with final holdout WAPE of **9.80% for carts** and **11.34% for orders**.
+Synthetic e-commerce data/ML platform covering **50K orders**, PostgreSQL/dbt, forecasting and risk models, Redpanda/PySpark streaming, MLflow and FastAPI. Frozen demand WAPE improved **88.24% -> 69.59% (21.14% relative)** against a rolling baseline.
 
+The completed platform lab adds:
 
----
+- **Infrastructure and identity:** Terraform/GCP/GKE Autopilot, Artifact Registry, VPC/subnet, state reconciliation and repository-restricted OIDC/Workload Identity Federation.
+- **Delivery:** GitHub Actions tests/validation, Docker and Trivy, exact digest promotion, Helm and Argo CD automated sync/prune/self-heal. Actions builds/promotes; Argo CD deploys.
+- **Operations:** Prometheus/PromQL, versioned Grafana dashboard, multi-window burn alerts for a **99.9% lab SLO target**, and Secret-backed Alertmanager routing with a verified synthetic Slack notification.
+- **Recovery and learning:** deliberate ImagePullBackOff diagnosis/rollback, self-healing, incident/runbooks, and separate Linux/systemd/SELinux work. Jenkins, Ansible, ELK and OpenShift were additional hands-on labs.
 
-## Featured Projects
+[V2 implementation](https://github.com/nikchey29/fulfillai/tree/platform-engineering-v2) · [Architecture and evidence](https://github.com/nikchey29/fulfillai/blob/main/docs/cloudops/V2_OVERVIEW.md) · [Successful delivery run](https://github.com/nikchey29/fulfillai/actions/runs/37233814366) · [Case study](https://chaithanyavemuri.netlify.app/projects/fulfillai)
 
-### 🛒 REES46 V2 — Behavioral Recommendation Platform
+V2 is completed on its branch; it is not merged into `main`. The cloud proof covers API health/metrics and delivery, not every model's inference or the entire data stack in GKE.
 
-[Repository](https://github.com/nikchey29/rees46-v2)
+### [REES46 V2 - Behavioral Recommendation Platform](https://github.com/nikchey29/rees46-v2)
 
-Production-style recommendation engineering platform built on the public REES46 multi-category marketplace behavior dataset.
+Processed a public corpus of **411.7M behavioral events containing 15.6M distinct users** through Bronze/Silver/Gold pipelines. Modeling and evaluation use bounded workloads; the final held-out ranker improved **MRR@20 by 45.6%** over popularity. These are dataset and offline-evaluation figures, not served-user or customer metrics.
 
-**Scale**
+Reworked a resource-heavy DuckDB aggregation into monthly partitions/session buckets and resumable outputs after temporary-storage failures. Hybrid retrieval/ranking, chronological evaluation, MLflow, FastAPI, PostgreSQL, Docker and CI connect the data path to a serving implementation.
 
-- Processed **411,709,736 behavioral events**
-- Produced **410,325,314 canonical deduplicated events**
-- Removed **1,384,422 exact duplicates**
-- Modeled behavior across **15,639,803 users**
-- **386,299 products**
-- **1,325 categories**
-- **8,969,359 sessions**
+### [OTTO Demand Forecasting - MSc Dissertation Research](https://github.com/nikchey29/otto-demand-forecasting-dissertation)
 
-**Recommendation stack**
+Compared **eight approaches on 672 hourly observations**, using three chronological folds, five fixed neural seeds and a separate 96-hour holdout. The selected **168-hour weekly seasonal baseline** achieved **13.93% mean CV WAPE**; final holdout WAPE was **9.80% carts / 11.34% orders**. More complex models were evaluated; the Transformer was not the selected winner.
 
-- Global and contextual popularity
-- Session co-visitation
-- Collaborative filtering
-- Hybrid candidate retrieval
-- Purchase-oriented ranking
-- TensorFlow sequential recommendation experiment
-- Top-K offline evaluation
+## Technical tools in context
 
-**Measured held-out performance**
+| Area | Tools and practice |
+|---|---|
+| Data and ML | Python, SQL, pandas, NumPy, scikit-learn, PyTorch, TensorFlow; recommendation, forecasting and chronological evaluation |
+| Data/ML systems | PostgreSQL, DuckDB, Parquet, dbt, PySpark, Redpanda, MLflow, FastAPI |
+| Cloud and delivery labs | GCP/GKE, Terraform, Artifact Registry, Docker, Kubernetes, Helm, Argo CD, GitOps, GitHub Actions, OIDC/WIF |
+| Operations/security labs | Prometheus, PromQL, Grafana, Alertmanager, Trivy, Linux, systemd, SELinux, probes, runbooks and recovery drills |
+| Additional hands-on exposure | Jenkins CI; Ansible idempotency; local ELK logging; OpenShift build/Service/TLS Route |
 
-The final purchase-oriented ranker improved over the popularity baseline on the untouched April 2020 test set by:
+## How I work and what I'm looking for
 
-- **Recall@10: +24.7%**
-- **Recall@20: +10.6%**
-- **MRR@20: +45.6%**
-- **NDCG@20: +23.3%**
+I keep baselines visible, freeze model decisions before final evaluation, document failures and state the limits of each result. The projects are independent engineering/research and controlled lab implementations; they do not establish enterprise production ownership, an SLA, historical 99.9% availability or 24/7 on-call experience.
 
-**Engineering**
-
-`Python` `DuckDB` `Parquet` `Pandas` `scikit-learn` `TensorFlow` `MLflow` `FastAPI` `PostgreSQL` `Docker` `GitHub Actions` `pytest` `mypy` `Ruff`
-
-The project also documents a real scalability redesign: a global Gold aggregation exhausted temporary storage, so the pipeline was redesigned around restartable month-partitioned Gold datasets and bounded working sets.
-
----
-
-### 📦 FulfillAI — E-commerce Data & ML Platform
-
-[Repository](https://github.com/nikchey29/fulfillai)
-
-End-to-end e-commerce analytics and machine-learning system covering relational data modeling, demand forecasting, operational risk prediction, feature engineering, and reproducible model evaluation.
-
-**Data platform**
-
-- **50,000 orders**
-- **300 products**
-- **5 warehouses**
-- **10 relational PostgreSQL tables**
-- Analytical SQL views and reproducible Parquet ML datasets
-
-**Forecasting**
-
-Built leakage-safe demand features including:
-
-- Lag features
-- Rolling statistics
-- Seasonality
-- Historical demand behavior
-- Chronological train / validation / test splits
-
-A hurdle Gradient Boosting forecasting approach reduced demand:
-
-- **WAPE: 88.24% → 69.59%**
-- **21.14% relative improvement** over the rolling baseline
-
-**Risk modeling**
-
-Developed models for:
-
-- Late delivery
-- Delivery exceptions
-- 7-day stockout risk
-- Reorder risk
-
-The project emphasizes realistic temporal evaluation and avoiding future-data leakage rather than reporting inflated random-split metrics.
-
-**CloudOps / platform extension**
-
-- Terraform-provisioned GCP networking, Artifact Registry and GKE Autopilot
-- Docker image deployment through Kubernetes + Helm
-- ArgoCD GitOps sync and observed self-healing
-- Prometheus/Grafana observability setup
-- Jenkins CI pipeline execution
-- Ansible Linux configuration with idempotency proof
-- ELK structured-log ingestion exercise
-- OpenShift native build, deployment, TLS Route and live health verification
-- Deliberate bad-release diagnosis and rollback
-
-**Stack**
-
-`Python` `PostgreSQL` `SQL` `dbt` `PySpark` `FastAPI` `MLflow` `Docker` `GitHub Actions` `Terraform` `GCP` `GKE` `Kubernetes` `Helm` `ArgoCD` `Prometheus` `Grafana` `Jenkins` `Ansible` `ELK` `OpenShift`
-
----
-
-### 📈 OTTO Demand Forecasting
-
-[Repository](https://github.com/nikchey29/otto-demand-forecasting-dissertation)
-
-Large-scale demand-forecasting research project built around e-commerce behavioral data.
-
-The project explores classical and deep-learning forecasting approaches with a focus on reproducible temporal evaluation and production-oriented experimentation.
-
-**Approaches include**
-
-- Time-series feature engineering
-- Multi-horizon forecasting
-- Ridge-based baselines
-- GRU models
-- Transformer-based experimentation
-- PyTorch workflows
-- Model evaluation and API-oriented delivery
-
-**Stack**
-
-`Python` `PyTorch` `Pandas` `NumPy` `scikit-learn` `Time Series` `Forecasting`
-
----
-
-## What I Work On
-
-I am particularly interested in problems involving:
-
-- Recommendation systems
-- Ranking and retrieval
-- Machine learning engineering
-- Large-scale behavioral data
-- Demand forecasting
-- E-commerce analytics
-- Feature engineering
-- Temporal and leakage-safe evaluation
-- Data pipelines
-- ML experimentation
-- Model serving
-- Applied deep learning
-
----
-
-## Technical Stack
-
-**Languages**
-
-`Python` `SQL`
-
-**Data & Analytics**
-
-`Pandas` `NumPy` `DuckDB` `Parquet` `PostgreSQL`
-
-**Machine Learning**
-
-`scikit-learn` `TensorFlow` `PyTorch`
-
-**ML Systems**
-
-`MLflow` `FastAPI`
-
-**Engineering**
-
-`Docker` `Git` `GitHub Actions` `Jenkins` `Terraform` `Kubernetes` `Helm` `ArgoCD` `Ansible` `pytest` `mypy` `Ruff`
-
-**Cloud & Observability**
-
-`GCP` `GKE` `Prometheus` `Grafana` `ELK` `OpenShift`
-
-**Core areas**
-
-`ML Engineering` `Cloud / DevOps` `Platform Engineering` `Recommendation Systems` `Forecasting` `Data Pipelines` `GitOps` `Observability` `Reliability Engineering`
-
----
-
-## Engineering Principles
-
-I try to build projects that demonstrate the full path from raw data to a defensible result:
-
-```text
-Raw data
-    ↓
-validation
-    ↓
-canonical datasets
-    ↓
-feature engineering
-    ↓
-chronological splits
-    ↓
-baselines
-    ↓
-modeling
-    ↓
-offline evaluation
-    ↓
-experiment tracking
-    ↓
-model artifacts
-    ↓
-API / serving
-    ↓
-testing + CI
-```
-
-I prioritize:
-
-- Reproducibility
-- Leakage prevention
-- Measured baselines
-- Chronological evaluation
-- Explicit limitations
-- Scalable data processing
-- Testable code
-- Clear experiment boundaries
-- Evidence-backed project claims
-
----
-
-## Current Focus
-
-I am currently targeting opportunities in:
-
-**ML Engineering • Cloud / DevOps • Platform Engineering • Data Engineering • Data Science**
-
-Open to **full-time roles and internships** involving data/ML systems, cloud-native platforms, CI/CD, Kubernetes, observability, reliability, streaming, model serving, recommendation, or forecasting.
-
----
-
-## Connect
-
-- [Portfolio](https://chaithanyavemuri.netlify.app/)
-- [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
-- [GitHub](https://github.com/nikchey29)
+I'm seeking early-career **Data Science, ML Engineering, MLOps/ML Platform, Data Engineering and junior Cloud/DevOps/Platform Engineering** opportunities where I can contribute to data-intensive systems and develop my operational judgment.
