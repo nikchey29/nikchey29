@@ -1,41 +1,45 @@
-# Hi, I'm Chaithanya Vemuri
+# Hi, I'm Chaithanya 👋
 
-**ML & Data Engineering | Python, SQL, reproducible ML systems | Berlin**
+I'm based in Berlin and finishing my MSc in Data Science, AI & Digital Business at Gisma University of Applied Sciences (expected November 2026). I'm looking for **junior Data Engineering or ML Engineering roles**.
 
-I'm completing an MSc in Data Science, AI & Digital Business at Gisma University of Applied Sciences (expected November 2026), following a BTech in Electronics & Communication Engineering. My independent projects connect data quality and chronological model evaluation to pipelines, APIs and delivery. I'm seeking junior ML Engineering or Data Engineering roles; start date by agreement.
+I like working on the parts of ML that happen before and after model training: getting messy data into shape, checking whether an experiment is trustworthy, and making the result usable through an API or a repeatable pipeline.
 
-[Portfolio](https://chaithanyavemuri.netlify.app/) · [Focused resumes](https://chaithanyavemuri.netlify.app/resume) · [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
+A lot of that learning came from projects that didn't work on the first try. I've kept the failures, decisions and limitations in the repositories below.
 
-## Selected work
+[Portfolio & case studies](https://chaithanyavemuri.netlify.app/) · [Role-specific CVs](https://chaithanyavemuri.netlify.app/resume) · [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
 
-### [REES46 V2 — Recommendation & Data Engineering](https://github.com/nikchey29/rees46-v2)
+## Work I'd show in an interview
 
-Processed **411.7M public behavioral events** across a corpus containing **15.6M dataset users** into Bronze/Silver/Gold layers. Replaced a failed global DuckDB aggregation (~30.6 GiB temporary spill) with bounded monthly partitions/session buckets and resumable outputs.
+### [REES46 V2 — behavioral data and recommendations](https://github.com/nikchey29/rees46-v2)
 
-The offline hybrid retrieval/ranker benchmark used **~1.50M training interactions and 5,000 held-out April 2020 users**. **MRR@20: 0.02443 → 0.03556 (+45.6% vs popularity)**. Dataset scale, model training and evaluation samples are separate; these are not served-user or customer metrics. MLflow, FastAPI and PostgreSQL connect the frozen model to a serving implementation.
+I processed **411.7 million historical marketplace events** using DuckDB and Parquet. My first attempt at a global aggregation failed after spilling roughly 30.6 GiB to disk, so I rebuilt the Gold stage around restartable monthly partitions.
 
-[Benchmark JSON](https://github.com/nikchey29/rees46-v2/blob/main/results/latest/model_benchmark.json) · [Case study](https://chaithanyavemuri.netlify.app/projects/rees46-v2)
+For the *separate, bounded offline recommendation experiment* (1.50M training interactions; 5,000 held-out users), the final ranker improved **MRR@20 from 0.02443 to 0.03556** over popularity. This is an offline ranking result, not a customer or revenue metric.
 
-### [FulfillAI — Data, ML & CloudOps Platform](https://github.com/nikchey29/fulfillai)
+[Code and methodology](https://github.com/nikchey29/rees46-v2) · [Saved benchmark](https://github.com/nikchey29/rees46-v2/blob/main/results/latest/model_benchmark.json)
 
-Built a **50K synthetic-order** system with PostgreSQL/dbt, prediction-time feature contracts, forecasting/risk models, MLflow, FastAPI and checkpointed Redpanda/PySpark streaming.
+### [FulfillAI — from simulated orders to a monitored API](https://github.com/nikchey29/fulfillai)
 
-Frozen demand evaluation on **63,501 synthetic test rows (June–July 2026)**: **69.59% WAPE vs 88.24% rolling-28 baseline**, a 21.14% relative reduction. The residual error is high, and **RMSE is worse: 0.934 model vs 0.837 baseline**. This supports a modeling trade-off, not a real-world supply-chain accuracy claim.
+I created a **synthetic, 50K-order** fulfillment dataset to explore SQL/dbt modeling, time-aware ML evaluation, streaming and API delivery. The forecasting experiment beat its rolling-28 baseline on WAPE, but the absolute error was still high and RMSE got worse. Both results are documented.
 
-The completed **GCP/GKE API platform lab** adds Terraform, repository-restricted OIDC/WIF, scanned images, immutable digest promotion, Helm/Argo CD delivery, Prometheus/Grafana, synthetic Alertmanager-to-Slack verification and recovery drills. **99.9% is a lab SLO target**. V2 remains on its own branch; the cloud proof covers API health/metrics and delivery.
+I then built a **GCP/GKE platform lab** around the API: Terraform, keyless GitHub Actions, immutable image promotion, Helm/Argo CD, Prometheus/Grafana and a deliberately broken release to practise recovery. The complete V2 implementation is on its [dedicated branch](https://github.com/nikchey29/fulfillai/tree/platform-engineering-v2). These are controlled lab exercises, not claims of running an employer's production service.
 
-[V2 implementation](https://github.com/nikchey29/fulfillai/tree/platform-engineering-v2) · [Evidence overview](https://github.com/nikchey29/fulfillai/blob/main/docs/cloudops/V2_OVERVIEW.md) · [Frozen results](https://github.com/nikchey29/fulfillai/blob/platform-engineering-v2/docs/results.md) · [Case study](https://chaithanyavemuri.netlify.app/projects/fulfillai)
+[Implementation and verification notes](https://github.com/nikchey29/fulfillai/blob/main/docs/cloudops/V2_OVERVIEW.md)
 
-### [OTTO Demand Forecasting — MSc Dissertation Research](https://github.com/nikchey29/otto-demand-forecasting-dissertation)
+### [OTTO — my MSc forecasting dissertation](https://github.com/nikchey29/otto-demand-forecasting-dissertation)
 
-Compared **eight approaches on 672 hourly observations**, with three chronological folds, five neural seeds and a separate 96-hour holdout. Selected the **168-hour seasonal baseline** at **13.93% mean CV WAPE**; final holdout WAPE was **9.80% carts / 11.34% orders**. The evaluated Transformer was not the selected winner.
+I used OTTO event logs to forecast **hourly cart and order activity**, comparing eight methods on **672 hourly observations**. The result surprised me: a simple weekly seasonal baseline did better in development testing than the Transformer. I kept that result rather than changing the project story to make the deep-learning model look like the winner.
 
-## Core tools in context
+The chosen baseline scored **13.93% mean cross-validation WAPE**. On the untouched 96-hour holdout it reached **9.80% WAPE for carts** and **11.34% for orders**.
 
-| Work | Core tools |
-|---|---|
-| Data pipelines | Python, SQL, pandas, PostgreSQL, DuckDB, Parquet, dbt; PySpark/Redpanda streaming |
-| ML systems | scikit-learn, chronological evaluation, MLflow, FastAPI, Docker, GitHub Actions |
-| Supporting platform lab | GCP/GKE, Terraform, Kubernetes, Argo CD, OIDC/WIF, Prometheus/Grafana |
+[Research, code and figures](https://github.com/nikchey29/otto-demand-forecasting-dissertation)
 
-I keep baselines visible, freeze decisions before final evaluation and document failures. The evidence comes from independent engineering, MSc research and controlled labs; it does not establish employer production ownership or on-call experience.
+## Tools I use
+
+- **Data:** Python, SQL, DuckDB, Parquet, PostgreSQL, dbt, pandas and PySpark
+- **ML systems:** scikit-learn, PyTorch, chronological evaluation, MLflow, FastAPI and Docker
+- **Deployment labs:** GitHub Actions, Terraform, GCP/GKE, Kubernetes, Helm, Argo CD and Prometheus/Grafana
+
+Most of this work is independent engineering and MSc research. I haven't presented it as paid production ownership. If something failed or a metric has an important caveat, I try to show that too.
+
+**Based in Berlin · Open to junior Data Engineering / ML Engineering opportunities · Start date by agreement**
