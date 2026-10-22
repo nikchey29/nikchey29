@@ -1,6 +1,6 @@
 # Hi, I'm Chaithanya 👋
 
-I'm based in Berlin and finishing my MSc in Data Science, AI & Digital Business at Gisma University of Applied Sciences (expected November 2026). I'm looking for **junior Data Engineering or ML Engineering roles**.
+I'm based in Berlin and finishing my MSc in Data Science, AI & Digital Business at Gisma University of Applied Sciences. I'm looking for **junior Data Engineering or ML Engineering roles**.
 
 I like working on the parts of ML that happen before and after model training: getting messy data into shape, checking whether an experiment is trustworthy, and making the result usable through an API or a repeatable pipeline.
 
