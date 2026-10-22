@@ -67,7 +67,9 @@ for path,doc in docs.items():
   if url.startswith(('http:','https:')):errors.append(f'{path}: external render asset {url}');continue
   if not resolve(path,url)[0].is_file():errors.append(f'{path}: missing asset {url}')
 for path in (DIST/'assets').glob('*.css'):
- for url in re.findall(r'url\([\'\"]?([^\)\'\"]+)',path.read_text()):
+ for match in re.finditer(r'''url\(\s*(?:"([^"]*)"|'([^']*)'|([^)]*))\s*\)''',path.read_text()):
+  url=next(value for value in match.groups() if value is not None).strip()
+  if url.startswith(('data:','#')):continue
   if not resolve(path,url)[0].is_file():errors.append(f'{path}: missing CSS asset {url}')
 
 foundation=json.loads((ROOT/'evidence/rees46-foundation.json').read_text())

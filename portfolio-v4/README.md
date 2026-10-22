@@ -54,3 +54,5 @@ No trackers, analytics SDKs, fake dashboards, generated likenesses, testimonials
 Browser layout checks used fixed-size same-origin frames at 320, 768, 1024 and 1440 CSS pixels, plus visual review at 390 pixels and the normal desktop viewport. These are responsive layout checks, not physical-device testing. Lighthouse and OS-level reduced-motion emulation were not available. Reduced-motion rules were reviewed statically. Native browser download-event capture timed out; all PDF files and download targets passed local checks.
 
 The QA harness in `scripts/qa.html` is test-only and is excluded from `dist/` and the deployment ZIP. Build output and deployment archives contain no account credentials.
+
+Legacy `/#contact`, the general-CV filename, and V3 stylesheet/script/social-card/fallback asset URLs are retained for existing links and cached V3 pages. New pages use `site.css` / `site.js`; the legacy assets do not run on V4 pages. The 404 document is excluded from indexing.

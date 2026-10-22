@@ -38,13 +38,14 @@ def page(path,title,description,body,kind='',extra_head=''):
     nav=''.join(f'<a href="{url}"'+(' aria-current="page"' if path==url else '')+f'>{label}</a>' for label,url in NAV)
     canonical=ORIGIN+path
     schema={'@context':'https://schema.org','@type':'Person','name':'Chaithanya Vemuri','jobTitle':'Early-career Data / ML Engineer','url':ORIGIN,'image':ORIGIN+'/assets/chaithanya-vemuri.webp','email':EMAIL,'sameAs':[GH,LI],'homeLocation':{'@type':'Place','name':'Berlin, Germany'}}
+    robots='noindex,follow' if path=='/404/' else 'index,follow'
     markup=f'''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101312"><meta name="color-scheme" content="dark">
 <title>{html.escape(title)} | Chaithanya Vemuri</title>
 <meta name="description" content="{html.escape(description,quote=True)}">
-<link rel="canonical" href="{canonical}"><meta name="robots" content="index,follow">
+<link rel="canonical" href="{canonical}"><meta name="robots" content="{robots}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Chaithanya Vemuri">
 <meta property="og:title" content="{html.escape(title,quote=True)} | Chaithanya Vemuri"><meta property="og:description" content="{html.escape(description,quote=True)}"><meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{ORIGIN}/assets/social-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Chaithanya Vemuri, Data and ML Engineering, Berlin">
@@ -68,7 +69,7 @@ def page(path,title,description,body,kind='',extra_head=''):
     dest.write_text(markup)
 
 def contact_band():
-    return f'''<section class="contact-band"><div class="shell contact-band-inner"><div>{eyebrow('NEXT CHAPTER')}<h2>Let’s build<br><em>something useful.</em></h2></div><div><p>I’m looking for a junior Data Engineering or ML Engineering role where I can contribute, learn from experienced engineers, and keep getting better at the details.</p>{link('/contact/','Start a conversation','button button-light')}<p class="small-note">Berlin · Start date by agreement</p></div></div></section>'''
+    return f'''<section class="contact-band" id="contact"><div class="shell contact-band-inner"><div>{eyebrow('NEXT CHAPTER')}<h2>Let’s build<br><em>something useful.</em></h2></div><div><p>I’m looking for a junior Data Engineering or ML Engineering role where I can contribute, learn from experienced engineers, and keep getting better at the details.</p>{link('/contact/','Start a conversation','button button-light')}<p class="small-note">Berlin · Start date by agreement</p></div></div></section>'''
 
 def rees_visual(full=False):
     return '''<div class="system-map rees-map" data-system="rees"><div class="visual-label"><span>01 / DATA SYSTEM</span><span>EXPLORE THE STAGES ↓</span></div><div class="pipeline-nodes" aria-label="Explore REES46 architecture">
