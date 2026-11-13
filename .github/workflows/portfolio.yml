@@ -1,0 +1,26 @@
+name: Portfolio checks
+
+on:
+  push:
+    branches: [portfolio-v4]
+    paths: ["portfolio-v4/**", ".github/workflows/portfolio.yml"]
+  pull_request:
+    paths: ["portfolio-v4/**", ".github/workflows/portfolio.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio-v4
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install PDF validation dependency
+        run: python3 -m pip install pypdf==6.10.0
+      - name: Build static pages
+        run: npm run build
+      - name: Validate routes, assets, metadata, evidence and PDF contracts
+        run: npm run check

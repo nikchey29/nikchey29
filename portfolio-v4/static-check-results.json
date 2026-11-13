@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "html_documents": 12,
+  "internal_and_external_link_references": 257,
+  "asset_references": 51,
+  "sitemap_routes": 10,
+  "pdfs": 3,
+  "contrast_ratios": {
+    "#e9e8df on #101312": 15.19,
+    "#adb6ac on #101312": 8.95,
+    "#849086 on #101312": 5.62,
+    "#d6a586 on #171c19": 7.88,
+    "#3d4a37 on #c9d2bc": 6.01
+  },
+  "errors": []
+}
