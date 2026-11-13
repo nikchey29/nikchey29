@@ -1,10 +1,12 @@
 # Chaithanya Vemuri
 
-**ML Platform & Data Infrastructure** · Berlin, Germany
+**Data Engineer · ML Engineer** · Berlin, Germany · open to junior and graduate roles
 
-I build data pipelines in Python and SQL and work on the infrastructure that delivers ML services. My independent projects cover data processing, offline evaluation, and deploying and recovering an API on GKE.
+I build data pipelines in Python and SQL and ship the models that run on them. My projects cover large-scale event processing, offline model evaluation, and deploying and recovering an API on GKE.
 
-[Portfolio and case studies](https://chaithanyavemuri.netlify.app/) · [Resume](https://chaithanyavemuri.netlify.app/resume/) · [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
+MSc Data Science, AI & Digital Business, Gisma University of Applied Sciences (expected 01/2027) · English (working language) · German A1, studying toward B1
+
+[Portfolio and case studies](https://chaithanyavemuri.xyz/) · [Resume](https://chaithanyavemuri.xyz/assets/Chaithanya_Vemuri_Resume.pdf) · [LinkedIn](https://www.linkedin.com/in/chaithanya-vemuri-141897264/)
 
 ## Selected work
 
@@ -18,7 +20,7 @@ I used Terraform to provision a GKE lab, GitHub Actions with Workload Identity F
 
 I processed **411.7M historical events** with DuckDB and Parquet. A global aggregation exhausted temporary storage after spilling roughly 30.6 GiB. Monthly partitions and 64 deterministic session buckets bounded the work and let the pipeline reuse completed outputs on restart.
 
-In a separate offline benchmark with 1.50M training interactions and 5,000 held-out users, the final ranker improved **MRR@20 from 0.02443 to 0.03556** over popularity.
+In a separate offline benchmark with 1.50M training interactions and 5,000 held-out users, the final ranker beat the popularity baseline by **46% on MRR@20** (0.02443 to 0.03556).
 
 [Partitioning decision](https://github.com/nikchey29/rees46-v2/blob/main/docs/adr/001-partitioned-gold.md) · [Saved benchmark](https://github.com/nikchey29/rees46-v2/blob/main/results/latest/model_benchmark.json)
 
@@ -32,4 +34,4 @@ I streamed **216.7M OTTO events** into **672 hourly observations** and compared 
 
 - **Data engineering** · Python, SQL, DuckDB, Parquet, PostgreSQL, dbt and PySpark
 - **ML systems** · PyTorch, scikit-learn, MLflow, FastAPI and Docker
-- **Platform lab** · Terraform, GCP/GKE, Kubernetes, Helm, Argo CD, GitHub Actions and Prometheus/Grafana
+- **Cloud and delivery** · Terraform, GCP/GKE, Kubernetes, Helm, Argo CD, GitHub Actions and Prometheus/Grafana
